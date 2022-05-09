@@ -1,0 +1,8 @@
+{
+    "run_as_authed_user": false,
+    "run_as_user_id": "",
+    "run_as_user_id_script_source": "",
+    "private": false,
+    "run_as_system": true,
+    "name": "purchaseCardFromMarket"
+}

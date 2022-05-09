@@ -1,0 +1,23 @@
+{
+    "name": "onCardPurchased",
+    "type": "DATABASE",
+    "config": {
+        "service_name": "fanzone-dev-atlas",
+        "database": "fanzone-dev",
+        "collection": "Card",
+        "operation_types": ["UPDATE"],
+        "full_document": true,
+        "unordered": false,
+        "match": {
+            "onSale": {
+                "%%prev": "%%true",
+                "%%this": "%%false"
+            },
+            "userId": {
+                "%ne": "%%prev"
+            }
+        }
+      },
+    "function_name": "onCardPurchased",
+    "disabled": false
+}

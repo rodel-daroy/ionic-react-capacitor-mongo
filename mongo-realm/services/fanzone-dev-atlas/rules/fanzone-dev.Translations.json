@@ -1,0 +1,83 @@
+{
+    "collection": "Translations",
+    "database": "fanzone-dev",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_relation_id": {
+                "bsonType": "objectId"
+            },
+            "relationType": {
+                "bsonType": "string",
+                "enum": [
+                    "metaCard",
+                    "metaPack",
+                    "metaAchievement"
+                ]
+            },
+            "items": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "id": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        },
+                        "language": {
+                            "bsonType": "string",
+                            "enum": [
+                                "en",
+                                "de",
+                                "fr",
+                                "es"
+                            ]
+                        }
+                    }
+                }
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        }
+    }
+}

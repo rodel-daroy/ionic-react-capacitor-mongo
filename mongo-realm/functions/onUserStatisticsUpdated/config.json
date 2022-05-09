@@ -1,0 +1,5 @@
+{
+    "name": "onUserStatisticsUpdated",
+    "run_as_system": true,
+    "private": true
+}

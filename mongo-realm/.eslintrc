@@ -1,0 +1,43 @@
+{
+	"root": true, // set this config as the root config (don't look for additional configurations in parent folders)
+
+	"env": {
+		"es2020": true, // enables ES6 syntax and global variables for ES11
+		"node": true
+	},
+
+	"parser": "@typescript-eslint/parser", // allows linting of .vue files
+
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+
+	"plugins": ["@typescript-eslint", "prettier", "security"],
+
+	"extends": [
+		"eslint:recommended",
+		"plugin:security/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:prettier/recommended"
+	],
+
+	"rules": {
+		"prettier/prettier": "error",
+		"no-console": "error",
+		"@typescript-eslint/no-unsafe-assignment": "off",
+		"@typescript-eslint/no-unsafe-call": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-unsafe-return": "off",
+		"@typescript-eslint/unbound-method": "off",
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+		"node/no-missing-import": "off",
+		"node/no-unpublished-import": "off",
+		"node/no-unsupported-features/es-syntax": "off"
+	}
+}

@@ -1,0 +1,7 @@
+.github
+node_modules
+build
+.vscode
+test
+.eslintcache
+coverage

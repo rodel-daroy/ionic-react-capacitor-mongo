@@ -1,0 +1,8 @@
+commitlint.config.js
+config-overrides.js
+dist
+coverage
+mongo-realm/hosting
+mongo-realm/functions/**/*.js
+android
+webpack.config.js

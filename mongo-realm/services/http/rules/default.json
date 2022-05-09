@@ -1,0 +1,5 @@
+{
+    "name": "default",
+    "actions": ["get", "post", "put", "patch", "delete", "head"],
+    "when": {}
+}

@@ -1,0 +1,431 @@
+{
+    "collection": "User",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85b1",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "%%root.accountId": "%%user.id"
+            },
+            "insert": false,
+            "delete": true,
+            "search": true,
+            "fields": {
+                "_id": {
+                    "read": true,
+                    "write": false
+                },
+                "accountId": {
+                    "read": true,
+                    "write": false
+                },
+                "bookmarkedCards":  {
+                    "read": true,
+                    "write": true
+                },
+                "favoriteCards":  {
+                    "read": true,
+                    "write": true
+                },
+                "authToken": {
+                    "read": false,
+                    "write": false
+                },
+                "achievements": {
+                    "read": true,
+                    "write": true
+                },
+                "coins": {
+                    "read": true,
+                    "write": true
+                },
+                "email": {
+                    "read": true,
+                    "write": true
+                },
+                "zoneStats": {
+                    "read": true,
+                    "write": true
+                },
+                "paymentProvider": {
+                    "read": true,
+                    "write": true
+                },
+                "preferredLanguage": {
+                    "read": true,
+                    "write": true
+                },
+                "lastName": {
+                    "read": true,
+                    "write": true
+                },
+                "firstName": {
+                    "read": true,
+                    "write": true
+                },
+                "bio": {
+                    "read": true,
+                    "write": true
+                },
+                "phoneNumber": {
+                    "read": true,
+                    "write": true
+                },
+                "securitySettings": {
+                    "read": true,
+                    "write": true
+                },
+                "media": {
+                    "read": true,
+                    "write": true
+                },
+                "prizes": {
+                    "read": true,
+                    "write": false
+                },
+                "statModifiers": {
+                    "read": true,
+                    "write": false
+                },
+                "username": {
+                    "read": true,
+                    "write": true
+                },
+                "invites": {
+                    "read": true,
+                    "write": false
+                },
+                "groups": {
+                    "read": true,
+                    "write": false
+                },
+                "vitalStats": {
+                    "read": true,
+                    "write": true
+                },
+                "tutorialFinished": {
+                    "read": true,
+                    "write": {
+                        "%%prev": false,
+                        "%%this": true
+                    }
+                }
+            },
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        },
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "fields": {
+                "_id": {
+                    "read": true,
+                    "write": false
+                },
+                "accountId": {
+                    "read": false,
+                    "write": false
+                },
+                "authToken": {
+                    "read": false,
+                    "write": false
+                },
+                "invites": {
+                    "read": false,
+                    "write": false
+                },
+                "groups": {
+                    "read": true,
+                    "write": false
+                },
+                "achievements": {
+                    "read": true,
+                    "write": false
+                },
+                "coins": {
+                    "read": true,
+                    "write": false
+                },
+                "email": {
+                    "read": false,
+                    "write": false
+                },
+                "zoneStats": {
+                    "read": true,
+                    "write": false
+                },
+                "paymentProvider": {
+                    "read": false,
+                    "write": false
+                },
+                "preferredLanguage": {
+                    "read": true,
+                    "write": false
+                },
+                "firstName": {
+                    "read": false,
+                    "write": false
+                },
+                "lastName": {
+                    "read": false,
+                    "write": false
+                },
+                "bio": {
+                    "read": true,
+                    "write": false
+                },
+                "securitySettings": {
+                    "read": false,
+                    "write": false
+                },
+                "media": {
+                    "read": true,
+                    "write": false
+                },
+                "prizes": {
+                    "read": false,
+                    "write": false
+                },
+                "statModifiers": {
+                    "read": true,
+                    "write": false
+                },
+                "username": {
+                    "read": true,
+                    "write": false
+                },
+                "vitalStats": {
+                    "read": true,
+                    "write": false
+                },
+                "tutorialFinished": {
+                    "read": false,
+                    "write": false
+                }
+            },
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "accountId": {
+                "bsonType": "string"
+            },
+            "authToken": {
+                "bsonType": "string"
+            },
+            "achievements": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "_id": {
+                            "bsonType": "objectId"
+                        },
+                        "achievementDate": {
+                            "bsonType": "date"
+                        },
+                        "status": {
+                            "bsonType": "string",
+                            "enum": [
+                                "not_seen",
+                                "seen",
+                                "new"
+                            ]
+                        }
+                    }
+                },
+                "title": "Achievements"
+            },
+            "coins": {
+                "bsonType": "decimal"
+            },
+            "points": {
+                "bsonType": "number"
+            },
+            "email": {
+                "bsonType": "string"
+            },
+            "_bookmarkedCard_ids":  {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                }
+            },
+            "zoneStats": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "type": {
+                            "bsonType": "string"
+                        },
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "title": "ZoneStats"
+            },
+            "paymentProvider": {
+                "bsonType": "number"
+            },
+            "media": {
+                "bsonType": "object",
+                "properties" : {
+                    "profilePhoto": { "bsonType": "string" }
+                }
+            },
+            "prizes": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "type": {
+                            "bsonType": "string"
+                        },
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "description": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            },
+            "invites": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "email": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            },
+            "groups": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "_id": {
+                            "bsonType": "objectId"
+                        },
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "founder": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            },
+            "preferredLanguage": {
+                "bsonType": "string"
+            },
+            "firstName": {
+                "bsonType": "string"
+            },
+            "lastName": {
+                "bsonType": "string"
+            },
+            "bio": {
+                "bsonType": "string"
+            },
+            "phoneNumber": {
+                "bsonType": "string"
+            },
+            "securitySetting": {
+                "bsonType": "number"
+            },
+            "statModifiers": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "type": {
+                            "bsonType": "string"
+                        },
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "title": "StatModifiers"
+            },
+            "username": {
+                "bsonType": "string"
+            },
+            "vitalStats": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "type": {
+                            "bsonType": "string"
+                        },
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "title": "VitalStats"
+            },
+            "tutorialFinished": {
+                "bsonType": "boolean"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "securitySetting",
+            "email",
+            "username",
+            "coins"
+        ],
+        "title": "User"
+    }
+}

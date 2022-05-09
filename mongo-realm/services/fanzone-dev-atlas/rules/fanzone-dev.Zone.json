@@ -1,0 +1,89 @@
+{
+    "collection": "Zone",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85b2",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_ancestor_ids":  {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                }
+            },
+            "rank":  {
+                "bsonType": "number"
+            },
+            "insigniaImageUrl": {
+                "bsonType": "string"
+            },
+            "location": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "description": {
+                "bsonType": "string"
+            },
+            "public": {
+                "bsonType": "boolean"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "insigniaImageUrl",
+            "name",
+            "location",
+            "description"
+        ],
+        "title": "Zone"
+    },
+    "relationships": {
+        "_ancestor_ids": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Zone",
+            "foreign_key": "_id",
+            "source_key": "_ancestor_ids",
+            "is_list": true
+        }
+    }
+}

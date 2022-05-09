@@ -1,0 +1,79 @@
+{
+    "collection": "ShopItem",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85af",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "description": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "price": {
+                "bsonType": "decimal"
+            },
+            "type": {
+                "bsonType": "string",
+                "enum": [
+                    "pack",
+                    "token"
+                ]
+            },
+            "value": {
+                "bsonType": "decimal"
+            },
+            "_metaPack_id": {
+                "bsonType": "objectId"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "type",
+            "price",
+            "description",
+            "name"
+        ],
+        "title": "ShopItem"
+    }
+}

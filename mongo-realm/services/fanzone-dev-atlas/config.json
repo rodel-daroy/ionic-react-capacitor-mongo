@@ -1,0 +1,9 @@
+{
+    "id": "6022b417e552cb4aa2ac845a",
+    "name": "fanzone-dev-atlas",
+    "type": "mongodb-atlas",
+    "config": {
+        "readPreference": "primaryPreferred",
+        "wireProtocolEnabled": true
+    }
+}

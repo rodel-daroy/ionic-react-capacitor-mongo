@@ -1,0 +1,14 @@
+{
+    "name": "onUserStatisticsUpdated",
+    "type": "DATABASE",
+    "config": {
+        "service_name": "fanzone-dev-atlas",
+        "database": "fanzone-dev",
+        "collection": "UserStatistics",
+        "operation_types": ["UPDATE"],
+        "full_document": true,
+        "unordered": false
+      },
+    "function_name": "onUserStatisticsUpdated",
+    "disabled": false
+}

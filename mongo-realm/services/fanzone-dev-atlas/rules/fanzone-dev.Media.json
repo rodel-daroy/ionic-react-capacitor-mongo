@@ -1,0 +1,142 @@
+{
+    "collection": "Media",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85aa",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "_user_id": {
+                    "%stringToOid": "%%user.custom_data._id"
+                }
+            },
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "fields": {
+                "_id": {
+                    "read": true,
+                    "write": false
+                },
+                "_user_id": {
+                    "read": true,
+                    "write": false
+                },
+                "category": {
+                    "read": true,
+                    "write": true
+                },
+                "path": {
+                    "read": true,
+                    "write": true
+                },
+                "mediaType": {
+                    "read": true,
+                    "write": true
+                },
+                "mimeType": {
+                    "read": true,
+                    "write": true
+                },
+                "name": {
+                    "read": true,
+                    "write": true
+                }
+            },
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        },
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_user_id": {
+                "bsonType": "objectId"
+            },
+            "category": {
+                "bsonType": "string"
+            },
+            "path": {
+                "bsonType": "string"
+            },
+            "mediaType": {
+                "bsonType": "string",
+                "enum": [
+                    "image",
+                    "video",
+                    "audio"
+                ]
+            },
+            "mimeType": {
+                "bsonType": "string",
+                "enum": [
+                    "image/png",
+                    "image/gif",
+                    "image/jpg",
+                    "image/webp",
+                    "image/svg"
+                ]
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "_id",
+            "name",
+            "path",
+            "mimeType",
+            "mediaType",
+            "category"
+        ],
+        "title": "Media"
+    },
+    "relationships": {
+        "_user_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_user_id",
+            "is_list": false
+        }
+    }
+}

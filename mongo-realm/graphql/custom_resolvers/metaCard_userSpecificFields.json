@@ -1,0 +1,25 @@
+{
+    "field_name": "userSpecificFields",
+    "function_name": "getUserSpecificMetaCardFields",
+    "input_type_format": "",
+    "on_type": "MetaCard",
+    "payload_type": {
+        "properties": {
+            "owned": {
+                "type": "bool"
+            },
+            "onSaleByMe": {
+                "type": "bool"
+            },
+            "onSaleByOthers": {
+                "type": "bool"
+            },
+            "bookmarked": {
+                "type": "bool"
+            }
+        },
+        "title": "UserSpecificMetaCardFields",
+        "type": "object"
+    },
+    "payload_type_format": "custom"
+}

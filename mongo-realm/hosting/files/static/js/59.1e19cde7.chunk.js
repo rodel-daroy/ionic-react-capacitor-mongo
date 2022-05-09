@@ -1,0 +1,2 @@
+(this.webpackJsonpfanzone=this.webpackJsonpfanzone||[]).push([[59],{343:function(n){n.exports=JSON.parse('{"h74Do0":[{"type":0,"value":"Willkommen zu Fanzone!"}]}')}}]);
+//# sourceMappingURL=59.1e19cde7.chunk.js.map

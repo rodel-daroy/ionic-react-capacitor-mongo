@@ -1,0 +1,6 @@
+{
+    "can_evaluate": {},
+    "name": "onNewUser",
+    "private": true,
+    "run_as_system": true
+}

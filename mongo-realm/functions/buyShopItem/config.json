@@ -1,0 +1,6 @@
+{
+    "name": "buyShopItem",
+    "private": false,
+    "can_evaluate": {},
+    "run_as_system": true
+}

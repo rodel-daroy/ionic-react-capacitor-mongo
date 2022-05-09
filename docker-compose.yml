@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  fanzone_client:
+    image: node:15.5.0
+    working_dir: /home/node/app
+    entrypoint: /bin/bash /home/node/app/docker-entrypoint.sh
+    command: bash -c "chown -R node:node /home/node/app/ && npm run start:local"
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/app
+      - fanzone_client_nodemodules:/home/node/app/node_modules
+    secrets:
+      - REACT_APP_REALM_APP_ID
+    environment: 
+      NODE_ENV: 'development'
+      REACT_APP_REALM_APP_ID_FILE: /run/secrets/REACT_APP_REALM_APP_ID
+
+volumes:
+  fanzone_client_nodemodules:
+    external: true
+
+secrets:
+  REACT_APP_REALM_APP_ID:
+    file: ./secrets/REACT_APP_REALM_APP_ID

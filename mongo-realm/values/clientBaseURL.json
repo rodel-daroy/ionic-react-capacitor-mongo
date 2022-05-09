@@ -1,0 +1,5 @@
+{
+    "from_secret": false,
+    "name": "clientBaseURL",
+    "value": "https://fanzonedev-troao.mongodbstitch.com"
+}

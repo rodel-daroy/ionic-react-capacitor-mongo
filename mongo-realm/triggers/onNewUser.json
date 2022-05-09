@@ -1,0 +1,12 @@
+{
+    "name": "onNewUser",
+    "type": "AUTHENTICATION",
+    "config": {
+        "operation_type": "CREATE",
+        "providers": [
+            "custom-function"
+        ]
+    },
+    "function_name": "onNewUser",
+    "disabled": false
+}

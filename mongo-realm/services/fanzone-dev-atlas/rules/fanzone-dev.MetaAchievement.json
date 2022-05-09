@@ -1,0 +1,136 @@
+{
+    "collection": "MetaAchievement",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85ab",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "meta": {
+                "bsonType": "object",
+                "properties": {
+                    "timeframe": {
+                        "bsonType": "string",
+                        "enum": [
+                            "one-off",
+                            "daily",
+                            "weekly"
+                        ]
+                    },
+                    "internalName": {
+                        "bsonType": "string"
+                    },
+                    "trigger": {
+                        "bsonType": "string"
+                    },
+                    "requirements": {
+                        "bsonType": "string"
+                    },
+                    "prerequesites": {
+                        "bsonType": "string"
+                    },
+                    "group": {
+                        "bsonType": "string" 
+                    },
+                    "visualisation": {
+                        "bsonType": "string"
+                    }
+                }
+            },
+            "category": {
+                "bsonType": "string"
+            },
+            "status": {
+                "bsonType": "string",
+                "enum": [
+                    "disabled",
+                    "enabled"
+                ]
+            },
+            "rewards": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "type": {
+                            "bsonType": "string",
+                            "enum": [
+                                "igc",
+                                "points",
+                                "other"
+                            ]
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        },
+                        "description": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            },
+            "type": {
+                "bsonType": "string",
+                "enum": [
+                    "milestone",
+                    "streak"
+                ]
+            },
+            "_translations_id": {
+                "bsonType": "objectId"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "_id",
+            "type"
+        ],
+        "title": "MetaAchievement"
+    },
+    "relationships": {
+        "_translations_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Translations",
+            "foreign_key": "_id",
+            "source_key": "_translations_id",
+            "is_list": false
+        }
+    }
+}

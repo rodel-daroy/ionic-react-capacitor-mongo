@@ -1,0 +1,325 @@
+{
+    "collection": "MetaCard",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85ac",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "cardType": {
+                "bsonType": "string",
+                "enum": [
+                    "athlete"
+                ]
+            },
+            "metaCardIndex": {
+                "bsonType": "number"
+            },
+            "zoneLabel": {
+                "bsonType": "string"
+            },
+            "teamLabel": {
+                "bsonType": "string"
+            },
+            "leagueLabel": {
+                "bsonType": "string"
+            },
+            "tierLabel": {
+                "bsonType": "string"
+            },
+            "season": {
+                "bsonType": "string"
+            },
+            "cardStats": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        },
+                        "type": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            },
+            "tier": {
+                "bsonType": "number"
+            },
+            "scoreMin": {
+                "bsonType": "number"
+            },
+            "scoreMax": {
+                "bsonType": "number"
+            },
+            "scoreCalc": {
+                "bsonType": "string"
+            },
+            "batch": {
+                "bsonType": "number"
+            },
+            "batchMax": {
+                "bsonType": "number"
+            },
+            "status": {
+                "bsonType": "string"
+            },
+            "statusComment": {
+                "bsonType": "string"
+            },
+            "title": {
+                "bsonType": "string"
+            },
+            "subtitle": {
+                "bsonType": "string"
+            },
+            "description": {
+                "bsonType": "string"
+            },
+            "language": {
+                "bsonType": "string",
+                "enum": [
+                    "en",
+                    "de",
+                    "es",
+                    "fr"
+                ]
+            },
+            "edition": {
+                "bsonType": "string"
+            },
+            "editionCategory": {
+                "bsonType": "string"
+            },
+            "editionSet": {
+                "bsonType": "string"
+            },
+            "amount": {
+                "bsonType": "number"
+            },
+            "circulation": {
+                "bsonType": "number"
+            },
+            "priceMin": {
+                "bsonType": "decimal"
+            },
+            "priceMax": {
+                "bsonType": "decimal"
+            },
+            "priceAvg": {
+                "bsonType": "decimal"
+            },
+            "priceSuggested": {
+                "bsonType": "decimal"
+            },
+            "imageFilename": {
+                "bsonType": "string"
+            },
+            "imageUrl": {
+                "bsonType": "string"
+            },
+            "imageIpfs": {
+                "bsonType": "string"
+            },
+            "_image_id": {
+                "bsonType": "objectId"
+            },
+            "imageBackFilename": {
+                "bsonType": "string"
+            },
+            "imageBackUrl": {
+                "bsonType": "string"
+            },
+            "imageBackIpfs": {
+                "bsonType": "string"
+            },
+            "_imageBack_id": {
+                "bsonType": "objectId"
+            },
+            "videoFilename": {
+                "bsonType": "string"
+            },
+            "videoUrl": {
+                "bsonType": "string"
+            },
+            "videoIpfs": {
+                "bsonType": "string"
+            },
+            "_video_id": {
+                "bsonType": "objectId"
+            },
+            "exclusiveFilename": {
+                "bsonType": "string"
+            },
+            "exclusiveUrl": {
+                "bsonType": "string"
+            },
+            "exclusiveIpfs": {
+                "bsonType": "string"
+            },
+            "_exclusive_id": {
+                "bsonType": "objectId"
+            },
+            "_creator_id": {
+                "bsonType": "objectId"
+            },
+            "_owner_id": {
+                "bsonType": "objectId"
+            },
+            "_zone_ids": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                }
+            },
+            "_profile_id": {
+                "bsonType": "objectId"
+            },
+            "blockchain": {
+                "creatorL14Address": {
+                    "bsonType": "string"
+                },
+                "ownerL14Address": {
+                    "bsonType": "string"
+                },
+                "zoneL14Address": {
+                    "bsonType": "string"
+                },
+                "subzoneL14Address": {
+                    "bsonType": "string"
+                },
+                "teamL14Address": {
+                    "bsonType": "string"
+                },
+                "profileL14Address": {
+                    "bsonType": "string"
+                },
+                "creatorL15Address": {
+                    "bsonType": "string"
+                },
+                "ownerL15Address": {
+                    "bsonType": "string"
+                },
+                "zoneL15Address": {
+                    "bsonType": "string"
+                },
+                "subzoneL15Address": {
+                    "bsonType": "string"
+                },
+                "teamL15Address": {
+                    "bsonType": "string"
+                },
+                "profileL15Address": {
+                    "bsonType": "string"
+                }
+            },
+            "_translations_id": {
+                "bsonType": "objectId"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "_id"
+        ],
+        "title": "MetaCard"
+    },
+
+    "relationships": {
+        "_creator_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_creator_id",
+            "is_list": false
+        },
+        "_owner_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_owner_id",
+            "is_list": false
+        },
+        "_profile_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_profile_id",
+            "is_list": false
+        },
+        "_zone_ids": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Zone",
+            "foreign_key": "_id",
+            "source_key": "_zone_ids",
+            "is_list": true
+        },
+        "_image_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Media",
+            "foreign_key": "_id",
+            "source_key": "_image_id",
+            "is_list": false
+        },
+        "_imageBack_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Media",
+            "foreign_key": "_id",
+            "source_key": "_imageBack_id",
+            "is_list": false
+        },
+        "_video_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Media",
+            "foreign_key": "_id",
+            "source_key": "_video_id",
+            "is_list": false
+        },
+        "_exclusive_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Media",
+            "foreign_key": "_id",
+            "source_key": "_exclusive_id",
+            "is_list": false
+        },
+        "_translations_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/Translations",
+            "foreign_key": "_relation_id",
+            "source_key": "_translations_id",
+            "is_list": false
+        }
+    }
+}

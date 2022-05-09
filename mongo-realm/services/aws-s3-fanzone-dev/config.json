@@ -1,0 +1,11 @@
+{
+    "name": "aws-s3-fanzone-dev",
+    "type": "aws",
+    "config": {
+        "accessKeyId": "AKIASOCYNDOLUHHFC7BW"
+    },
+    "secret_config": {
+        "secretAccessKey": "aws-s3-real-dev"
+    },
+    "version": 1
+}

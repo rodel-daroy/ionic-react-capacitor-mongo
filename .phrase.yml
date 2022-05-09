@@ -1,0 +1,13 @@
+phrase:
+  access_token: eab3f2ef7743f725db27e0eb23dd36b116cc3c129cb78ab7ba854b699144d6ff
+  project_id: a09828cf0d31ca5c84d746ab36a94de8
+  push:
+    sources:
+    - file: ./src/translations/simple/<locale_name>.json
+      params:
+        file_format: react_simple_json
+  pull:
+    targets:
+    - file: ./src/translations/from_phrase/<locale_name>.json
+      params:
+        file_format: react_simple_json

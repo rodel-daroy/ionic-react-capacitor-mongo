@@ -1,0 +1,14 @@
+{
+    "name": "onAchievementObtained",
+    "type": "DATABASE",
+    "config": {
+        "service_name": "fanzone-dev-atlas",
+        "database": "fanzone-dev",
+        "collection": "User",
+        "operation_types": ["UPDATE"],
+        "full_document": true,
+        "unordered": true
+      },
+    "function_name": "onAchievementObtained",
+    "disabled": false
+}

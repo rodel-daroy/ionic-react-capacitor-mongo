@@ -1,0 +1,89 @@
+{
+    "collection": "MetaPack",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85ad",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "cost": {
+                "bsonType": "array",
+                "items": {
+                   "bsonType": "object",
+                   "properties": {
+                       "currency": {
+                           "bsonType": "string"
+                       },
+                       "value": {
+                           "bsonType": "decimal"
+                       }
+                   }
+                }
+            },
+            "cardsInPack": {
+                "bsonType": "number"
+            },
+            "edition": {
+                "bsonType": "string"
+            },
+            "imageUrl": {
+                "bsonType": "string"
+            },
+            "packsQty": {
+                "bsonType": "number"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "type": {
+                "bsonType": "string"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "name",
+            "edition",
+            "cardsInPack",
+            "packsQty"
+        ],
+        "title": "MetaPack"
+    }
+}

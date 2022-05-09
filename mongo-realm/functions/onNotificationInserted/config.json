@@ -1,0 +1,6 @@
+{
+    "can_evaluate": {},
+    "name": "onNotificationInserted",
+    "private": true,
+    "run_as_system": true
+}

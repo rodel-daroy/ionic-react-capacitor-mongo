@@ -1,0 +1,14 @@
+{
+    "name": "onNotificationInserted",
+    "type": "DATABASE",
+    "config": {
+        "service_name": "fanzone-dev-atlas",
+        "database": "fanzone-dev",
+        "collection": "Notifications",
+        "operation_types": ["INSERT"],
+        "full_document": true,
+        "unordered": false
+      },
+    "function_name": "onNotificationInserted",
+    "disabled": false
+}

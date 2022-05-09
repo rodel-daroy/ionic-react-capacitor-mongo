@@ -1,0 +1,27 @@
+{
+    "name": "onCardUserUpdated",
+    "type": "DATABASE",
+    "config": {
+        "service_name": "fanzone-dev-atlas",
+        "database": "fanzone-dev",
+        "collection": "Card",
+        "operation_types": ["UPDATE"],
+        "full_document": true,
+        "match": {
+            "$and": [
+                {
+                    "_user_id": {
+                        "%ne": "%%prev"
+                    }
+                },
+                {
+                    "previousOwners": {
+                        "%ne": "%%prev"
+                    }
+                }
+            ]            
+        }
+      },
+    "function_name": "onCardUserUpdated",
+    "disabled": false
+}

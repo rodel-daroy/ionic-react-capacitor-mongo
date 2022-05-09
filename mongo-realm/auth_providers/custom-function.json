@@ -1,0 +1,9 @@
+{
+    "id": "6022b418e552cb4aa2ac85bc",
+    "name": "custom-function",
+    "type": "custom-function",
+    "config": {
+        "authFunctionName": "magicLinkAuthentication"
+    },
+    "disabled": false
+}

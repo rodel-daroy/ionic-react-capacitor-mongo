@@ -1,0 +1,183 @@
+{
+    "collection": "Card",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85a8",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "_user_id": {
+                    "%stringToOid": "%%user.custom_data._id"
+                }
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "read": true,
+            "fields": {
+                "_id": {
+                    "read": true,
+                    "write": false
+                },
+                "_metaCard_id": {
+                    "read": true,
+                    "write": false
+                },
+                "onSale": {
+                    "read": true,
+                    "write": true
+                },
+                "price": {
+                    "read": true,
+                    "write": true
+                },
+                "mintNumber": {
+                    "read": true,
+                    "write": false
+                },
+                "points": {
+                    "read": true,
+                    "write": false
+                },
+                "_user_id": {
+                    "read": true,
+                    "write": true
+                },
+                "onSaleDate": {
+                    "read": true,
+                    "write": true
+                }
+            },
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_metaCard_id": {
+                "bsonType": "objectId"
+            },
+            "onSale": {
+                "bsonType": "boolean"
+            },
+            "onSaleDate": {
+                "bsonType": "date"
+            },
+            "price": {
+                "bsonType": "decimal"
+            },
+            "mintNumber": {
+                "bsonType": "number"
+            },
+            "points": {
+                "bsonType": "number"
+            },
+            "_user_id": {
+                "bsonType": "objectId"
+            },
+            "previousOwners": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "_user_id": {
+                            "bsonType": "objectId"
+                        },
+                        "transferDate": {
+                            "bsonType": "date"
+                        },
+                        "transferType": {
+                            "bsonType": "string",
+                            "enum": [
+                                "purchase",
+                                "pack",
+                                "gift",
+                                "promo"
+                            ]
+                        },
+                        "purchasePrice": {
+                            "bsonType": "decimal"
+                        }
+                    }
+                }
+            },
+            "effects": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "type": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "title": "Effects"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "_metaCard_id"
+        ],
+        "title": "Card"
+    },
+    "relationships": {
+        "_metaCard_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/MetaCard",
+            "foreign_key": "_id",
+            "source_key": "_metaCard_id",
+            "is_list": false
+        },
+        "_user_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_user_id",
+            "is_list": false
+        }
+    }
+}

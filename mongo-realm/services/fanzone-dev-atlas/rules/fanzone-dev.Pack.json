@@ -1,0 +1,87 @@
+{
+    "collection": "Pack",
+    "database": "fanzone-dev",
+    "id": "6022b418e552cb4aa2ac85ae",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {
+                "%%user.type": "normal"
+            },
+            "insert": false,
+            "read": true,
+            "write": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": false
+            }
+        },
+        {
+            "name": "server",
+            "apply_when": {
+                "%%user.type": "server"
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "read": true,
+                "write": true
+            }
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_card_ids": {
+                "additionalItems": false,
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                },
+                "maxItems": 24,
+                "minItems": 1
+            },
+            "_metaPack_id": {
+                "bsonType": "objectId"
+            },
+            "opened": {
+                "bsonType": "bool"
+            },
+            "_user_id": {
+                "bsonType": "objectId"
+            },
+            "createdAt": {
+                "bsonType": "date"
+            },
+            "updatedAt": {
+                "bsonType": "date"
+            }
+        },
+        "required": [
+            "opened",
+            "_card_ids"
+        ],
+        "title": "Pack"
+    },
+    "relationships": {
+        "_metaPack_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/MetaPack",
+            "foreign_key": "_id",
+            "source_key": "_metaPack_id",
+            "is_list": false
+        },
+        "_user_id": {
+            "ref": "#/relationship/fanzone-dev-atlas/fanzone-dev/User",
+            "foreign_key": "_id",
+            "source_key": "_user_id",
+            "is_list": false
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "field_name": "zoneMetaCardCount",
+    "function_name": "zoneMetaCardCount",
+    "input_type_format": "",
+    "on_type": "Zone",
+    "payload_type": {
+        "properties": {
+            "owned": {
+                "type": "number"
+            },
+            "total": {
+                "type": "number"
+            }
+        },
+        "title": "ZoneMetaCardCount",
+        "type": "object"
+    },
+    "payload_type_format": "custom"
+}

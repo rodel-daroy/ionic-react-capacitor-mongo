@@ -1,0 +1,24 @@
+{
+    "name": "onCreateOrUpdatePackAddDate",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE"
+        ],
+        "database": "fanzone-dev",
+        "collection": "Pack",
+        "service_name": "fanzone-dev-atlas",
+        "match": {
+            "updateDescription.updatedFields.updatedAt": {
+                "$exists": false
+            }
+        },
+        "project": {},
+        "full_document": false,
+        "full_document_before_change": false,
+        "unordered": true
+    },
+    "function_name": "addDate",
+    "disabled": false
+}
